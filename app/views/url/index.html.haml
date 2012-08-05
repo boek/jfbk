@@ -1,0 +1,12 @@
+%div#wrapper
+  %h4 Long Url
+  = form_for(@url, :url => create_path) do |f|
+    %p
+      =f.label :long_url, "Url"
+      =f.text_field :long_url
+      =f.submit
+    %p  
+  %h5 
+    Your short Url
+    -if flash[:notice]
+      =flash[:notice].html_safe

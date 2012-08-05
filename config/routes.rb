@@ -1,4 +1,9 @@
 Jfbk::Application.routes.draw do
+  #resources :url
+  root :to => "Url#index"
+  match 'create' => "Url#create"
+  match ':hash' => "Url#redirect"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -13,7 +18,7 @@ Jfbk::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
-  # Sample resource route with options:
+  # Sample resource route with optons:
   #   resources :products do
   #     member do
   #       get 'short'
