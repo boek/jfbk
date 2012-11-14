@@ -1,18 +1,158 @@
 // Place all the styles related to the url controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@-moz-keyframes grad {
+  0% { background-position:0px 0px; }
+  100% { background-position:600px 0px; }
+}
+@-webkit-keyframes grad {
+  0% { background-position:0px 0px; }
+  100% { background-position:600px 0px; }
+}
 
-
-
-
-body{background:rgb(50,50,50);position:relative;}
+body{
+  background:#292931;
+  position:relative;
+  font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
 
 #wrapper{
-	border-radius: 15px;
-	margin:auto;
-	padding: 20px;
-	width: 300px;
-	height:150px;
-	margin-top:50px;
-	background-color:rgb(70, 70, 70);
+
+  margin:120px auto;
+  padding:0px 0px 1px;
+  width:600px;
+  height:62px;
+  position:relative;
+  }
+
+  #card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transition: -webkit-transform 1s;
+  -moz-transition: -moz-transform 1s;
+  -o-transition: -o-transform 1s;
+  transition: transform 1s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+#card .front, #card .back {
+  background:#423142;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+#card .back{
+  -webkit-transform: rotateY( 180deg );
+  -moz-transform: rotateY( 180deg );
+  -o-transform: rotateY( 180deg );
+  transform: rotateY( 180deg );
+}
+
+#card.flipped {
+  -webkit-transform: rotateY( 180deg );
+  -moz-transform: rotateY( 180deg );
+  -o-transform: rotateY( 180deg );
+  transform: rotateY( 180deg );
+}
+
+.topBar{
+  height:3px;
+  /* fallback DIY*/
+
+  background: -webkit-linear-gradient(left, #ad6bad, #e6efbd, #a0de84, #8cced4, #ad86af, #e62163, #b563a5);
+  background: -moz-linear-gradient(left, #ad6bad, #e6efbd, #a0de84, #8cced4, #ad86af, #e62163, #b563a5);
+  background: -ms-linear-gradient(left, #ad6bad, #e6efbd, #a0de84, #8cced4, #ad86af, #e62163, #b563a5);
+  background: -o-linear-gradient(left, #ad6bad, #e6efbd, #a0de84, #8cced4, #ad86af, #e62163, #b563a5);
+
+  -webkit-box-shadow: 0px 1px 0px 0px #3a313a;
+  -moz-box-shadow: 0px 1px 0px 0px #3a313a;
+  box-shadow: 0px 1px 0px 0px #3a313a;
+  -moz-animation:grad 3s infinite linear;
+  -webkit-animation:grad 3s infinite linear;
+
+  -moz-animation-play-state:paused;
+  -webkit-animation-play-state:paused;
+}
+
+.loading{
+  -moz-animation-play-state:running;
+  -webkit-animation-play-state:running;
+}
+
+label{
+  height:34px;
+  background:#dedede url("label-bg.png");
+  float:left;
+  line-height: 34px;
+  display:block;
+  width:34px;
+  text-indent:100%;
+  overflow:hidden;
+  margin:0px 0px 0px 10px;
+}
+input[type=text]{
+  height:34px;
+  padding:0px;
+  margin:0px;
+  border:0px;
+  padding:0px 10px;
+  float:left;
+  width:492px;
+}
+
+input[type=button]{
+  display:block;
+  height: 34px;
+  width:34px;
+  background-image:url("submit.gif");
+  border:0px;
+  text-indent:-9000px;
+  overflow:hidden;
+  cursor:pointer;
+}
+
+.submitting{background-position:bottom;}
+
+
+
+.front, .back {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.front {
+  z-index: 2;
+}
+.back {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+#card .back{
+  height:80px;
+}
+
+.back input[type=text]{
+  width:526px;
+}
+
+#back{
+  font-size:10px;
+  color:#fff;
+  float:right;
+  margin-right:10px;
+  line-height:18px;
 }

@@ -2,6 +2,7 @@ Jfbk::Application.routes.draw do
   #resources :url
   root :to => "Url#index"
   match 'create' => "Url#create"
+  match 'test' => "Url#test"
   match ':hash' => "Url#redirect"
 
   # The priority is based upon order of creation:
