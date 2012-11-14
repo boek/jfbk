@@ -7,7 +7,7 @@ class UrlController < ApplicationController
 		hash = Url.shortify params[:url]
 
 		respond_to do |format|
-		  format.js { render :json => "#{request.protocol + request.host_with_port}/#{hash}" }
+			format.js { render :json => "#{request.protocol + request.host_with_port}/#{hash}" }
 		end
 	end
 
